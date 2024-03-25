@@ -1,11 +1,11 @@
 package rbac.is_in_group
 
 ## default to a closed system (deny by default)
-default allowed = false
+default allowed := false
 
 ## user is allowed only if they are a member of the group
 ## passed in as resource.group
-allowed {
+allowed if {
 	ds.check_relation({
 		"subject": {
 			"type": "user",
